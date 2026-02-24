@@ -39,7 +39,28 @@ ICH E2C(R2) compliant Periodic Benefit-Risk Evaluation Report generator with all
 
 ---
 
-### 2. E2B(R2) ICSR Ingestion (`e2b-ingestion/`)
+### 2. ICSR Narrative Generator (`icsr-narrative/`)
+
+AI-powered Individual Case Safety Report narrative generation for regulatory submissions.
+
+**Features:**
+- Generates professional case narratives from structured ICSR data
+- ICH E2B(R3) compliant narrative structure
+- Save narratives to database with timestamps
+- Export as downloadable text files
+
+**Installation:**
+```sql
+@icsr-narrative/sql/01_setup_tables.sql
+@icsr-narrative/sql/02_sample_data.sql
+@icsr-narrative/sql/03_deploy_app.sql
+```
+
+[Full documentation](icsr-narrative/README.md)
+
+---
+
+### 3. E2B(R2) ICSR Ingestion (`e2b-ingestion/`)
 
 ICH E2B(R2) compliant XML parser and Snowflake loader for Individual Case Safety Reports.
 
@@ -59,11 +80,11 @@ ICH E2B(R2) compliant XML parser and Snowflake loader for Individual Case Safety
 
 ---
 
-### 3. ICSR Narrative Generator (Legacy)
+### 4. Legacy Files
 
-Generates individual case safety report narratives from structured ICSR data.
+Original prototype files - use the packaged modules above instead.
 
-**Files:** `streamlit_app.py`, `app.py`
+**Files:** `streamlit_app.py`, `app.py`, `psur_app.py`
 
 ---
 
@@ -83,7 +104,8 @@ Generates individual case safety report narratives from structured ICSR data.
 HCLS_DEMO
 ├── PHARMACOVIGILANCE
 │   ├── PRODUCT_REGISTRY        -- Products for PBRER
-│   ├── ICSR_CASES             -- Individual case safety reports
+│   ├── ICSR_CASES             -- Individual case safety reports (PBRER)
+│   ├── ICSR_CASES_NARRATIVE   -- ICSR cases with narratives
 │   ├── E2B_ICSR_CASES         -- E2B imported cases
 │   ├── E2B_ICSR_DRUGS         -- E2B imported drugs
 │   ├── E2B_ICSR_REACTIONS     -- E2B imported reactions
@@ -93,8 +115,9 @@ HCLS_DEMO
 │   ├── V_PSUR_CAUSALITY       -- Causality distribution
 │   └── V_E2B_CASE_SUMMARY     -- E2B case overview
 └── STREAMLIT_APPS
-    ├── PBRER_WRITER_STAGE     -- PBRER app files
-    └── E2B_INGESTION_STAGE    -- E2B app files
+    ├── PBRER_WRITER_STAGE      -- PBRER app files
+    ├── ICSR_NARRATIVE_STAGE    -- ICSR Narrative app files
+    └── E2B_INGESTION_STAGE     -- E2B app files
 ```
 
 ## Requirements
