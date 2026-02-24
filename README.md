@@ -1,54 +1,108 @@
-# Pharmacovigilance AI Demos
+# Pharmacovigilance AI Tools for Snowflake
 
-AI-powered pharmacovigilance tools using Snowflake Cortex for medical writing and safety narrative generation.
+AI-powered pharmacovigilance tools using Snowflake Cortex for medical writing, safety reporting, and ICSR management.
 
-## Applications
+## Quick Start
 
-### 1. PBRER Medical Writing Assistant (`pbrer_app.py`)
-ICH E2C(R2) compliant Periodic Benefit-Risk Evaluation Report generator with all 19 sections:
-- Sections 1-4: Introduction & Authorization
-- Section 5-6: Exposure & Use Patterns
-- Sections 7-14: Clinical Data & Findings
-- Sections 15-16: Signal Evaluation
-- Sections 17-19: Benefit-Risk Analysis & Conclusions
+Each module is a self-contained package with SQL setup scripts, sample data, and Streamlit apps.
 
-### 2. ICSR Narrative Generator (`streamlit_app.py`)
-Generates individual case safety report narratives from structured ICSR data.
+```bash
+# Clone the repo
+git clone https://github.com/sfc-gh-mgandhirajan/pharmacovigilance.git
+cd pharmacovigilance
 
-### 3. E2B(R2) ICSR Ingestion (`e2b-ingestion/`)
-ICH E2B(R2) compliant XML parser and Snowflake loader for Individual Case Safety Reports:
-- Parses E2B(R2) XML files (FDA FAERS / EMA EudraVigilance compatible)
-- Extracts safety report metadata, patient demographics, drugs, and reactions
-- Loads into normalized Snowflake tables (E2B_ICSR_CASES, E2B_ICSR_DRUGS, E2B_ICSR_REACTIONS)
-- Includes sample E2B XML for testing
-
-## Technology Stack
-- **Snowflake Cortex**: LLM inference (Llama 3.1 70B)
-- **Streamlit in Snowflake**: UI deployment
-- **MedDRA**: Medical terminology (SOC, PT)
-
-## Deployment
-Deploy as Streamlit in Snowflake apps:
-
-```sql
--- PBRER Medical Writing Assistant
-CREATE STREAMLIT HCLS_DEMO.STREAMLIT_APPS.PSUR_MEDICAL_WRITER
-    ROOT_LOCATION = '@HCLS_DEMO.STREAMLIT_APPS.PSUR_WRITER_STAGE'
-    MAIN_FILE = 'pbrer_app.py'
-    QUERY_WAREHOUSE = 'BI_WH';
-
--- ICSR Narrative Generator
-CREATE STREAMLIT HCLS_DEMO.STREAMLIT_APPS.SAFETY_NARRATIVE_GENERATOR
-    ROOT_LOCATION = '@HCLS_DEMO.STREAMLIT_APPS.SAFETY_NARRATIVE_STAGE'
-    MAIN_FILE = 'streamlit_app.py'
-    QUERY_WAREHOUSE = 'BI_WH';
-
--- E2B(R2) ICSR Ingestion
-CREATE STREAMLIT HCLS_DEMO.STREAMLIT_APPS.E2B_ICSR_INGESTION
-    ROOT_LOCATION = '@HCLS_DEMO.STREAMLIT_APPS.E2B_INGESTION_STAGE'
-    MAIN_FILE = 'e2b_ingestion_app.py'
-    QUERY_WAREHOUSE = 'BI_WH';
+# Install a module (e.g., PBRER Writer)
+cd pbrer-writer
+# Run SQL scripts in order: 01_setup_tables.sql, 02_sample_data.sql, 03_deploy_app.sql
 ```
 
+## Modules
+
+### 1. PBRER Medical Writing Assistant (`pbrer-writer/`)
+
+ICH E2C(R2) compliant Periodic Benefit-Risk Evaluation Report generator with all 19 sections.
+
+**Features:**
+- AI-generated content for all 19 PBRER sections
+- Uses Snowflake Cortex (Llama 3.1 70B)
+- Includes database schema, views, and sample data
+
+**Installation:**
+```sql
+-- Run in order:
+@pbrer-writer/sql/01_setup_tables.sql  -- Create schema
+@pbrer-writer/sql/02_sample_data.sql   -- Load sample data
+@pbrer-writer/sql/03_deploy_app.sql    -- Deploy Streamlit app
+```
+
+[Full documentation](pbrer-writer/README.md)
+
+---
+
+### 2. E2B(R2) ICSR Ingestion (`e2b-ingestion/`)
+
+ICH E2B(R2) compliant XML parser and Snowflake loader for Individual Case Safety Reports.
+
+**Features:**
+- Parses E2B(R2) XML files (FDA FAERS / EMA EudraVigilance compatible)
+- Extracts safety reports, patient data, drugs, reactions (MedDRA)
+- Loads into normalized tables
+- Includes sample E2B XML for testing
+
+**Installation:**
+```sql
+@e2b-ingestion/sql/01_setup_tables.sql
+@e2b-ingestion/sql/02_deploy_app.sql
+```
+
+[Full documentation](e2b-ingestion/README.md)
+
+---
+
+### 3. ICSR Narrative Generator (Legacy)
+
+Generates individual case safety report narratives from structured ICSR data.
+
+**Files:** `streamlit_app.py`, `app.py`
+
+---
+
+## Technology Stack
+
+| Component | Technology |
+|-----------|------------|
+| AI/LLM | Snowflake Cortex (Llama 3.1 70B) |
+| UI | Streamlit in Snowflake |
+| Terminology | MedDRA (SOC, PT, LLT) |
+| Data Format | ICH E2B(R2) XML |
+| Reporting Standard | ICH E2C(R2) PBRER |
+
+## Database Schema
+
+```
+HCLS_DEMO
+├── PHARMACOVIGILANCE
+│   ├── PRODUCT_REGISTRY        -- Products for PBRER
+│   ├── ICSR_CASES             -- Individual case safety reports
+│   ├── E2B_ICSR_CASES         -- E2B imported cases
+│   ├── E2B_ICSR_DRUGS         -- E2B imported drugs
+│   ├── E2B_ICSR_REACTIONS     -- E2B imported reactions
+│   ├── V_PSUR_PRODUCT_SUMMARY -- Product statistics
+│   ├── V_PSUR_CASES_BY_SOC    -- Cases by System Organ Class
+│   ├── V_PSUR_MONTHLY_TREND   -- Monthly trends
+│   ├── V_PSUR_CAUSALITY       -- Causality distribution
+│   └── V_E2B_CASE_SUMMARY     -- E2B case overview
+└── STREAMLIT_APPS
+    ├── PBRER_WRITER_STAGE     -- PBRER app files
+    └── E2B_INGESTION_STAGE    -- E2B app files
+```
+
+## Requirements
+
+- Snowflake account with Cortex LLM access
+- Warehouse for query execution
+- ACCOUNTADMIN or appropriate privileges for setup
+
 ## License
+
 MIT
