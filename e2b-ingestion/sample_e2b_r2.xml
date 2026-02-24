@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ichicsr SYSTEM "ich-icsr-v2.1.dtd">
+<ichicsr lang="en">
+  <ichicsrmessageheader>
+    <messagetype>ichicsr</messagetype>
+    <messageformatversion>2.1</messageformatversion>
+    <messageformatrelease>2.0</messageformatrelease>
+    <messagenumb>MSG-2024-001</messagenumb>
+    <messagesenderidentifier>PHARMA-DEMO-001</messagesenderidentifier>
+    <messagereceiveridentifier>FDA-FAERS</messagereceiveridentifier>
+    <messagedateformat>204</messagedateformat>
+    <messagedate>20240215</messagedate>
+  </ichicsrmessageheader>
+  
+  <safetyreport>
+    <safetyreportversion>1</safetyreportversion>
+    <safetyreportid>US-PHARMA-2024-00001</safetyreportid>
+    <primarysourcecountry>US</primarysourcecountry>
+    <occurcountry>US</occurcountry>
+    <transmissiondateformat>102</transmissiondateformat>
+    <transmissiondate>20240215</transmissiondate>
+    <reporttype>1</reporttype>
+    <serious>1</serious>
+    <seriousnessdeath>2</seriousnessdeath>
+    <seriousnesslifethreatening>2</seriousnesslifethreatening>
+    <seriousnesshospitalization>1</seriousnesshospitalization>
+    <seriousnessdisabling>2</seriousnessdisabling>
+    <seriousnesscongenitalanomali>2</seriousnesscongenitalanomali>
+    <seriousnessother>2</seriousnessother>
+    <receivedateformat>102</receivedateformat>
+    <receivedate>20240210</receivedate>
+    <receiptdateformat>102</receiptdateformat>
+    <receiptdate>20240212</receiptdate>
+    <fulfillexpeditecriteria>1</fulfillexpeditecriteria>
+    
+    <primarysource>
+      <reportertitle>Dr.</reportertitle>
+      <reportergivename>John</reportergivename>
+      <reporterfamilyname>Smith</reporterfamilyname>
+      <reporterorganization>City General Hospital</reporterorganization>
+      <reporterdepartment>Cardiology</reporterdepartment>
+      <reporterstreet>123 Medical Center Drive</reporterstreet>
+      <reportercity>Boston</reportercity>
+      <reporterstate>MA</reporterstate>
+      <reporterpostcode>02115</reporterpostcode>
+      <reportercountry>US</reportercountry>
+      <qualification>1</qualification>
+    </primarysource>
+    
+    <sender>
+      <sendertype>1</sendertype>
+      <senderorganization>Demo Pharmaceuticals Inc.</senderorganization>
+      <senderdepartment>Drug Safety</senderdepartment>
+      <sendertitle>Director</sendertitle>
+      <sendergivename>Jane</sendergivename>
+      <senderfamilyname>Doe</senderfamilyname>
+      <senderstreetaddress>456 Pharma Way</senderstreetaddress>
+      <sendercity>Cambridge</sendercity>
+      <senderstate>MA</senderstate>
+      <senderpostcode>02139</senderpostcode>
+      <sendercountrycode>US</sendercountrycode>
+      <sendertel>+1-617-555-0100</sendertel>
+      <senderfax>+1-617-555-0101</senderfax>
+      <senderemailaddress>safety@demopharma.com</senderemailaddress>
+    </sender>
+    
+    <receiver>
+      <receivertype>2</receivertype>
+      <receiverorganization>FDA</receiverorganization>
+      <receiverdepartment>FAERS</receiverdepartment>
+      <receivercountrycode>US</receivercountrycode>
+    </receiver>
+    
+    <patient>
+      <patientinitial>J.D.</patientinitial>
+      <patientbirthdateformat>102</patientbirthdateformat>
+      <patientbirthdate>19580315</patientbirthdate>
+      <patientonsetage>65</patientonsetage>
+      <patientonsetageunit>801</patientonsetageunit>
+      <patientsex>1</patientsex>
+      <patientweight>82</patientweight>
+      <patientheight>175</patientheight>
+      
+      <medicalhistoryepisode>
+        <patientmedicalhistorytext>Hypertension diagnosed 2015, well-controlled on lisinopril</patientmedicalhistorytext>
+        <patientmedicalstartdateformat>602</patientmedicalstartdateformat>
+        <patientmedicalstartdate>2015</patientmedicalstartdate>
+      </medicalhistoryepisode>
+      
+      <medicalhistoryepisode>
+        <patientmedicalhistorytext>Type 2 Diabetes Mellitus diagnosed 2018</patientmedicalhistorytext>
+        <patientmedicalstartdateformat>602</patientmedicalstartdateformat>
+        <patientmedicalstartdate>2018</patientmedicalstartdate>
+      </medicalhistoryepisode>
+      
+      <medicalhistoryepisode>
+        <patientmedicalhistorytext>Hyperlipidemia</patientmedicalhistorytext>
+      </medicalhistoryepisode>
+      
+      <drug>
+        <drugcharacterization>1</drugcharacterization>
+        <medicinalproduct>CARDIOMAX 100mg tablets</medicinalproduct>
+        <activesubstancename>cardimaxolol</activesubstancename>
+        <drugbatchnumb>BN2024-A123</drugbatchnumb>
+        <drugauthorizationnumb>NDA-123456</drugauthorizationnumb>
+        <drugauthorizationcountry>US</drugauthorizationcountry>
+        <drugauthorizationholder>Demo Pharmaceuticals Inc.</drugauthorizationholder>
+        <drugstructuredosagenumb>100</drugstructuredosagenumb>
+        <drugstructuredosageunit>003</drugstructuredosageunit>
+        <drugseparatedosagenumb>1</drugseparatedosagenumb>
+        <drugintervaldosageunitnumb>1</drugintervaldosageunitnumb>
+        <drugintervaldosagedefinition>804</drugintervaldosagedefinition>
+        <drugdosagetext>100mg once daily</drugdosagetext>
+        <drugdosageform>tablet</drugdosageform>
+        <drugadministrationroute>048</drugadministrationroute>
+        <drugindication>Atrial fibrillation</drugindication>
+        <drugstartdateformat>102</drugstartdateformat>
+        <drugstartdate>20231115</drugstartdate>
+        <drugenddateformat>102</drugenddateformat>
+        <drugenddate>20240205</drugenddate>
+        <actiondrug>1</actiondrug>
+        <drugrecurreadministration>3</drugrecurreadministration>
+      </drug>
+      
+      <drug>
+        <drugcharacterization>2</drugcharacterization>
+        <medicinalproduct>Lisinopril 10mg</medicinalproduct>
+        <activesubstancename>lisinopril</activesubstancename>
+        <drugdosagetext>10mg once daily</drugdosagetext>
+        <drugdosageform>tablet</drugdosageform>
+        <drugadministrationroute>048</drugadministrationroute>
+        <drugindication>Hypertension</drugindication>
+        <drugstartdateformat>602</drugstartdateformat>
+        <drugstartdate>2015</drugstartdate>
+        <actiondrug>4</actiondrug>
+      </drug>
+      
+      <drug>
+        <drugcharacterization>2</drugcharacterization>
+        <medicinalproduct>Metformin 500mg</medicinalproduct>
+        <activesubstancename>metformin hydrochloride</activesubstancename>
+        <drugdosagetext>500mg twice daily</drugdosagetext>
+        <drugdosageform>tablet</drugdosageform>
+        <drugadministrationroute>048</drugadministrationroute>
+        <drugindication>Type 2 Diabetes Mellitus</drugindication>
+        <drugstartdateformat>602</drugstartdateformat>
+        <drugstartdate>2018</drugstartdate>
+        <actiondrug>4</actiondrug>
+      </drug>
+      
+      <reaction>
+        <primarysourcereaction>Severe bradycardia</primarysourcereaction>
+        <reactionmeddraversionpt>26.1</reactionmeddraversionpt>
+        <reactionmeddrapt>Bradycardia</reactionmeddrapt>
+        <reactionstartdateformat>102</reactionstartdateformat>
+        <reactionstartdate>20240203</reactionstartdate>
+        <reactionenddateformat>102</reactionenddateformat>
+        <reactionenddate>20240207</reactionenddate>
+        <reactionoutcome>1</reactionoutcome>
+      </reaction>
+      
+      <reaction>
+        <primarysourcereaction>Syncope</primarysourcereaction>
+        <reactionmeddraversionpt>26.1</reactionmeddraversionpt>
+        <reactionmeddrapt>Syncope</reactionmeddrapt>
+        <reactionstartdateformat>102</reactionstartdateformat>
+        <reactionstartdate>20240205</reactionstartdate>
+        <reactionenddateformat>102</reactionenddateformat>
+        <reactionenddate>20240205</reactionenddate>
+        <reactionoutcome>1</reactionoutcome>
+      </reaction>
+      
+      <reaction>
+        <primarysourcereaction>Dizziness</primarysourcereaction>
+        <reactionmeddraversionpt>26.1</reactionmeddraversionpt>
+        <reactionmeddrapt>Dizziness</reactionmeddrapt>
+        <reactionstartdateformat>102</reactionstartdateformat>
+        <reactionstartdate>20240201</reactionstartdate>
+        <reactionoutcome>1</reactionoutcome>
+      </reaction>
+      
+      <summary>
+        <narrativeincludeclinical>A 65-year-old male patient with a history of hypertension, type 2 diabetes mellitus, and hyperlipidemia was started on CARDIOMAX 100mg once daily for newly diagnosed atrial fibrillation on 15-Nov-2023. 
+
+On 01-Feb-2024, the patient began experiencing episodes of dizziness. On 03-Feb-2024, the patient developed severe bradycardia with heart rate dropping to 38 bpm. On 05-Feb-2024, the patient experienced a syncopal episode and was admitted to City General Hospital.
+
+Upon admission, ECG showed sinus bradycardia at 35 bpm. CARDIOMAX was immediately discontinued. The patient was monitored in the cardiac care unit. Heart rate gradually improved over the following 48 hours without intervention.
+
+The patient was discharged on 07-Feb-2024 in stable condition with heart rate normalized to 72 bpm. All symptoms had resolved by the time of discharge. The treating physician assessed the bradycardia and syncope as probably related to CARDIOMAX therapy.
+
+The patient was advised to avoid beta-blockers in the future and was started on an alternative antiarrhythmic medication.</narrativeincludeclinical>
+      </summary>
+      
+    </patient>
+    
+  </safetyreport>
+  
+  <safetyreport>
+    <safetyreportversion>1</safetyreportversion>
+    <safetyreportid>US-PHARMA-2024-00002</safetyreportid>
+    <primarysourcecountry>US</primarysourcecountry>
+    <occurcountry>US</occurcountry>
+    <transmissiondateformat>102</transmissiondateformat>
+    <transmissiondate>20240218</transmissiondate>
+    <reporttype>1</reporttype>
+    <serious>1</serious>
+    <seriousnessdeath>2</seriousnessdeath>
+    <seriousnesslifethreatening>2</seriousnesslifethreatening>
+    <seriousnesshospitalization>2</seriousnesshospitalization>
+    <seriousnessdisabling>2</seriousnessdisabling>
+    <seriousnesscongenitalanomali>2</seriousnesscongenitalanomali>
+    <seriousnessother>1</seriousnessother>
+    <receivedateformat>102</receivedateformat>
+    <receivedate>20240215</receivedate>
+    <receiptdateformat>102</receiptdateformat>
+    <receiptdate>20240216</receiptdate>
+    
+    <primarysource>
+      <reportergivename>Sarah</reportergivename>
+      <reporterfamilyname>Johnson</reporterfamilyname>
+      <reportercountry>US</reportercountry>
+      <qualification>5</qualification>
+    </primarysource>
+    
+    <sender>
+      <sendertype>1</sendertype>
+      <senderorganization>Demo Pharmaceuticals Inc.</senderorganization>
+    </sender>
+    
+    <receiver>
+      <receivertype>2</receivertype>
+      <receiverorganization>FDA</receiverorganization>
+    </receiver>
+    
+    <patient>
+      <patientinitial>S.J.</patientinitial>
+      <patientonsetage>42</patientonsetage>
+      <patientonsetageunit>801</patientonsetageunit>
+      <patientsex>2</patientsex>
+      <patientweight>68</patientweight>
+      
+      <drug>
+        <drugcharacterization>1</drugcharacterization>
+        <medicinalproduct>DERMACLEAR Cream 0.1%</medicinalproduct>
+        <activesubstancename>dermazolone</activesubstancename>
+        <drugbatchnumb>DC-2024-B456</drugbatchnumb>
+        <drugauthorizationholder>Demo Pharmaceuticals Inc.</drugauthorizationholder>
+        <drugdosagetext>Apply thin layer twice daily</drugdosagetext>
+        <drugdosageform>cream</drugdosageform>
+        <drugadministrationroute>028</drugadministrationroute>
+        <drugindication>Eczema</drugindication>
+        <drugstartdateformat>102</drugstartdateformat>
+        <drugstartdate>20240101</drugstartdate>
+        <drugenddateformat>102</drugenddateformat>
+        <drugenddate>20240210</drugenddate>
+        <actiondrug>1</actiondrug>
+      </drug>
+      
+      <reaction>
+        <primarysourcereaction>Severe skin rash at application site</primarysourcereaction>
+        <reactionmeddrapt>Dermatitis contact</reactionmeddrapt>
+        <reactionstartdateformat>102</reactionstartdateformat>
+        <reactionstartdate>20240208</reactionstartdate>
+        <reactionoutcome>2</reactionoutcome>
+      </reaction>
+      
+      <reaction>
+        <primarysourcereaction>Skin burning sensation</primarysourcereaction>
+        <reactionmeddrapt>Skin burning sensation</reactionmeddrapt>
+        <reactionstartdateformat>102</reactionstartdateformat>
+        <reactionstartdate>20240205</reactionstartdate>
+        <reactionoutcome>2</reactionoutcome>
+      </reaction>
+      
+      <summary>
+        <narrativeincludeclinical>A 42-year-old female patient started using DERMACLEAR Cream 0.1% on 01-Jan-2024 for treatment of chronic eczema on her forearms.
+
+After approximately 5 weeks of use, on 05-Feb-2024, the patient noticed a burning sensation at the application sites. By 08-Feb-2024, she developed a severe rash characterized by erythema, vesicles, and intense pruritus extending beyond the original application areas.
+
+The patient discontinued DERMACLEAR on 10-Feb-2024 and consulted her dermatologist. She was prescribed topical hydrocortisone and oral antihistamines. At the time of this report (15-Feb-2024), the symptoms were gradually improving but not fully resolved.
+
+The dermatologist suspected a delayed hypersensitivity reaction to one of the cream components.</narrativeincludeclinical>
+      </summary>
+      
+    </patient>
+    
+  </safetyreport>
+  
+</ichicsr>
